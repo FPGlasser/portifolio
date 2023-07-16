@@ -1,0 +1,22 @@
+folder: AiFillFolder;
+check: HiBadgeCheck;
+
+medal: FaMedal;
+project: AiFillProject;
+tech: BsCodeSlash
+
+
+rede social: 
+  email: MdEmail;
+  facebook: AiFillFacebook;
+  instagram: AiFillInstagram;
+  whatsApp: AiOutlineWhatsApp;
+  linkedin: AiFillLinkedin;
+  git: AiFillGithub;
+
+Menu:
+  Home: BiHomeAlt;
+  About: BsPerson;
+  Service: RiServiceLine;
+  portifolio: BiBook
+  contact: BiMessageSquareDetail
