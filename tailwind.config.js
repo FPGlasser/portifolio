@@ -28,7 +28,7 @@ module.exports = {
       
     },
     extend: {
-      
+      mw: '1100px'
     },
   },
   plugins: [],
