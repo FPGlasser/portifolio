@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Link } from "@/i18n/navigation";
 import { NavMenuWideScreen } from "./navmenu/Navmenu";
+import { ChangeLocale } from "./locale/ChangeLocale";
 
 export const Navbar = () => {
   return (
@@ -11,7 +12,8 @@ export const Navbar = () => {
         <div>
           <NavMenuWideScreen />
         </div>
-        <div>
+        <div className="flex flex-row gap-4">
+          <ChangeLocale />
           <Link href={`/#contact`}>
             <Button className="rounded-full flex justify-center items-center cursor-pointer">
               Contact me
