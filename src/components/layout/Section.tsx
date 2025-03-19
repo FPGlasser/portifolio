@@ -14,7 +14,7 @@ const sectionVariants = cva(
       },
     },
     defaultVariants: {
-      intent: "primary",
+      intent: "default",
     },
   }
 );

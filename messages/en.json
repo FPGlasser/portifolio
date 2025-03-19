@@ -1,7 +1,12 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "pages": {
+    "homePage": {
+      "heroSection": {
+        "Presentation": "Hello! I am F.P. Glasser",
+        "Title": "From Backend Logic to Frontend Magic – I Build It All",
+        "Subtitle": "I am FullStack Engineer and Developer, Strong skills in programming, technical problem-solving, and customer support."
+      }
+    }
   },
 
   "components": {
@@ -11,6 +16,11 @@
       "Services": "Services",
       "Projects": "Projects",
       "Blog": "Blog"
+    },
+
+    "buttons": {
+      "ContactBtn": "Contact me",
+      "DownloadResume": "My resume"
     }
   }
 }
