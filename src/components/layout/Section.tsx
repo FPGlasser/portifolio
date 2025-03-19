@@ -20,12 +20,13 @@ const sectionVariants = cva(
 );
 
 type SectionProps = {
+  id?: string;
   children: ReactNode;
 } & VariantProps<typeof sectionVariants>;
 
-export const Section = ({ children, intent }: SectionProps) => {
+export const Section = ({ id, children, intent }: SectionProps) => {
   return (
-    <section className={cn(sectionVariants({ intent }))}>
+    <section id={id} className={cn(sectionVariants({ intent }))}>
       <div className="max-w-[1280px] w-full">{children}</div>
     </section>
   );
