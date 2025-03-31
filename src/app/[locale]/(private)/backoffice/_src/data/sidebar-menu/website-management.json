@@ -1,0 +1,16 @@
+[
+  {
+    "id": "PP-01",
+    "title": "Posts",
+    "url": "#",
+    "icon": "rss",
+    "isActive": true,
+    "submenu": [
+      {
+        "id": "post-01",
+        "title": "General",
+        "url": "#"
+      }
+    ]
+  }
+]

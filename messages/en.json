@@ -5,6 +5,22 @@
         "Presentation": "Hello! I am F.P. Glasser",
         "Title": "From Backend Logic to Frontend Magic – I Build It All",
         "Subtitle": "I am FullStack Engineer and Developer, Strong skills in programming, technical problem-solving, and customer support."
+      },
+      "aboutSection": {
+        "Title": "About me",
+        "paragraphs": {
+          "P1": "I am an entrepreneur, developer, and technology enthusiast, currently in my final semester of Computer Engineering at the Federal University of Ceará. As co-founder of TicTac Pagamentos, a financial solutions startup, I combine my technical expertise with a strategic vision to develop innovative and user-centered products.",
+          "P2": "Specialized in full-stack development, mobile development, and data analysis, I have experience with Domain-Driven Design (DDD), Test-Driven Development (TDD), and microservices-based software architecture. My tech stack includes C, Java, Kotlin, Python, and JavaScript, along with solid knowledge of data structures and algorithms.",
+          "P3": "I work with modern frameworks and libraries, including React.js, Next.js, Angular, React Native, Spring Framework, Spring Boot, ExpressJS and NestJS, as well as strong expertise in SQL databases and database design. Additionally, I have proficiency in version control tools such as Git and GitHub/GitLab, and project management tools to ensure an efficient and organized workflow.",
+          "P4": "Beyond software development, I have experience in customer support, ensuring that technological solutions effectively meet user needs with efficiency and quality.",
+          "P5": "By combining technology, customer service, and entrepreneurship, my goal is to create scalable, secure, and innovative solutions to drive businesses and transform the digital experience."
+        }
+      },
+      "serviceSection": {
+        "Title": "Services"
+      },
+      "contactSection": {
+        "Title": "Contact me"
       }
     }
   },
@@ -21,6 +37,13 @@
     "buttons": {
       "ContactBtn": "Contact me",
       "DownloadResume": "My resume"
+    },
+
+    "serviceCards": {
+      "card1": {
+        "Title": "Full-Stack Development",
+        "Description": ""
+      }
     }
   }
 }

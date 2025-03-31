@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import { ComponentProps, ReactNode } from "react";
 
-const containerVariants = cva("", {
+const containerVariants = cva("w-full", {
   variants: {
     intent: {
       flex: "flex flex-wrap",
-      grid: "grid grid-col-flow  sm:grid-cols-1 md-grid-cols-2 lg-grid-cols-4",
+      grid: "grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8",
     },
   },
   defaultVariants: {
@@ -24,7 +24,7 @@ export const Container = ({
   ...props
 }: ContainerProps) => {
   return (
-    <div className={cn(intent, className)} {...props}>
+    <div className={cn(containerVariants({ intent, className }))} {...props}>
       {children}
     </div>
   );

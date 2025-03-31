@@ -12,6 +12,7 @@ type LocaleItem = {
 export const ChangeLocaleItem = ({ isoCode, language }: LocaleItem) => {
   const currentLocale = useLocale();
   const pathname = usePathname();
+
   return (
     <li className="hover:bg-primary-light cursor-pointer rounded-sm px-1.5 py-1">
       <Link href={pathname} locale={isoCode} replace>

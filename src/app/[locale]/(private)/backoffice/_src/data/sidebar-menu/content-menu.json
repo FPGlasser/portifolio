@@ -1,0 +1,50 @@
+[
+  {
+    "id": "PP-01",
+    "title": "Blog",
+    "url": "#",
+    "icon": "rss",
+    "isActive": true,
+    "submenu": [
+      {
+        "id": "post-01",
+        "title": "Analytics",
+        "url": "/backoffice/blog"
+      },
+      {
+        "id": "post-02",
+        "title": "All Posts",
+        "url": "/backoffice/blog/posts"
+      },
+      {
+        "id": "post-03",
+        "title": "Archived",
+        "url": "/backoffice/blog/posts/archived"
+      }
+    ]
+  },
+  {
+    "id": "PP-02",
+    "title": "Projects",
+    "url": "#",
+    "icon": "square-kanban",
+    "isActive": false,
+    "submenu": [
+      {
+        "id": "proj-01",
+        "title": "General",
+        "url": "#"
+      },
+      {
+        "id": "proj-02",
+        "title": "Team",
+        "url": "#"
+      },
+      {
+        "id": "proj-03",
+        "title": "Billing",
+        "url": "#"
+      }
+    ]
+  }
+]

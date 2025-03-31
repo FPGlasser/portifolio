@@ -1,0 +1,222 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum LOCALE {
+  en
+  pt
+  fr
+  es
+}
+
+model Service {
+  id              Int              @id @default(autoincrement())
+  serviceContents ServiceContent[] @relation("ServiceToServiceContent")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model ServiceContent {
+  id          Int     @id @default(autoincrement())
+  title       String  @db.VarChar(128)
+  description String  @db.VarChar(1024)
+  locale      LOCALE
+  service     Service @relation(fields: [serviceId], references: [id], name: "ServiceToServiceContent")
+  serviceId   Int
+}
+
+enum TechFields {
+  TECHNOLOGY // Tecnologia
+  BUSINESS // Negócios
+  ENTREPRENEURSHIP // Empreendedorismo
+  INNOVATION // Inovação
+  NEWS // Notícias
+  EDUCATION // Educação
+  RESEARCH // Pesquisa
+  FINANCE // Finanças
+  MARKETING // Marketing
+  DESIGN // Design
+  SOFTWARE_DEVELOPMENT // Desenvolvimento de Software
+  DATA_SCIENCE // Ciência de Dados
+  CYBERSECURITY // Segurança da Informação
+  CLOUD_COMPUTING // Computação em Nuvem
+  DEVOPS // DevOps & Automação
+  AI_ML // Inteligência Artificial & Machine Learning
+  UX_UI // UX/UI Design
+  NETWORKING // Redes & Infraestrutura
+  DATABASE_ADMIN // Administração de Banco de Dados
+  GAME_DEVELOPMENT // Desenvolvimento de Jogos
+  EMBEDDED_SYSTEMS // Sistemas Embarcados
+  IOT // Internet das Coisas
+  BLOCKCHAIN // Blockchain & Criptomoedas
+  IT_MANAGEMENT // Gestão de TI
+  TECH_SUPPORT // Suporte Técnico
+  // Áreas de Eletrônica
+  ANALOG_ELECTRONICS // Eletrônica Analógica
+  DIGITAL_ELECTRONICS // Eletrônica Digital
+  POWER_ELECTRONICS // Eletrônica de Potência
+  AUTOMATION_CONTROL // Automação & Controle
+  TELECOMMUNICATIONS // Telecomunicações
+  ROBOTICS // Robótica
+  PCB_DESIGN // Design de PCB & Circuitos
+  SENSOR_TECHNOLOGY // Tecnologia de Sensores
+}
+
+model Post {
+  id         String        @id @default(cuid())
+  contents   PostContent[] @relation("PostToPostContent")
+  techFields TechFields[]
+  articleUrl String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model PostContent {
+  id          Int            @id @default(autoincrement())
+  title       String         @db.VarChar(255)
+  description String         @db.VarChar(5000)
+  Locale      LOCALE
+  // images      PostImageUri[] @relation("PostContentToPostImagesUri")
+  post        Post           @relation(fields: [postId], references: [id], name: "PostToPostContent")
+  postId      String
+}
+
+// model PostImageUri {
+//   id            Int         @id @default(autoincrement())
+//   imageUri      String      @db.VarChar
+//   postContent   PostContent @relation(fields: [postContentId], references: [id], name: "PostContentToPostImagesUri")
+//   postContentId Int
+// }
+
+model Project {
+  id            String              @id @default(cuid())
+  published     Boolean             @default(false)
+  repositoryUrl String?
+  projectType ProjectTypeEnum
+  technologies  ProjectTechnology[] @relation("ProjectToProjectTechnology")
+  ownerId       String
+  techFields    TechFields[]
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  publishedDate DateTime
+  contents      ProjectContent[]    @relation("ProjectToProjectContent")
+  members       String[]
+  status ProjectStatus
+}
+
+enum ProjectTypeEnum{
+  FRONTEND
+  BACKEND
+  FULLSTACK
+  DATABASE
+  ARCHITECTURE
+  DDD
+  MICROSERVICES
+}
+
+model ProjectContent {
+  id          Int     @id @default(autoincrement())
+  title       String  @db.VarChar(255)
+  description String  @db.VarChar(5000)
+  locale      LOCALE
+  project     Project @relation(fields: [projectId], references: [id], name: "ProjectToProjectContent")
+  projectId   String
+}
+
+enum ProjectStatus {
+  PLANNING // Em planejamento
+  IN_PROGRESS // Em andamento
+  ON_HOLD // Pausado
+  COMPLETED // Concluído
+  CANCELED // Cancelado
+}
+
+model ProjectTechnology {
+  id           Int        @id @default(autoincrement())
+  project      Project    @relation(fields: [projectId], references: [id], name: "ProjectToProjectTechnology", onDelete: Cascade)
+  projectId    String
+  technology   Technology @relation(fields: [technologyId], references: [id], name: "TechnologyToProjectTechnology", onDelete: Cascade)
+  technologyId Int
+}
+
+model Technology {
+  id          Int                 @id @default(autoincrement())
+  name        String              @db.VarChar(255)
+  description String              @db.VarChar(1024)
+  website     String              @db.VarChar(512)
+  icon        String
+  logoUri     String
+  projects    ProjectTechnology[] @relation("TechnologyToProjectTechnology")
+}
+
+model Contact{
+  id String @id @default(cuid())
+  fullName String @db.VarChar(255)
+  email String @db.VarChar(64)
+  subject String @db.VarChar(128)
+  message String @db.VarChar(1000)
+  response String @db.VarChar(1000)
+  createdAt DateTime @default(now())
+}
+
+model BlockedEmail {
+  id         String           @id @default(cuid())
+  email      String           @unique
+  reason     EmailBlockReason
+  details    String?          // Texto opcional explicando o motivo
+  blockedAt  DateTime         @default(now())
+}
+
+
+enum EmailBlockReason {
+  HARD_BOUNCE          // Endereço de e-mail inexistente ou rejeitado permanentemente
+  SOFT_BOUNCE          // Rejeição temporária (caixa cheia, servidor inativo, etc.)
+  SPAM_COMPLAINT       // Usuário marcou como spam
+  UNSUBSCRIBED         // Usuário solicitou remoção
+  INVALID_SYNTAX       // E-mail com formato inválido
+  BLACKLISTED_DOMAIN   // Domínio do e-mail está em uma blacklist
+  MANUAL_BLOCK         // Bloqueio manual por parte de um administrador
+  MALICIOUS_ACTIVITY   // Detecção de uso malicioso (phishing, malware etc.)
+  TOO_MANY_FAILURES    // Múltiplas falhas de envio detectadas
+  POLICY_VIOLATION     // Violação de termos de uso ou políticas da plataforma
+}
+
+model Newsletter {
+  id        String           @id @default(cuid())
+  contents NewsletterContent[] @relation("NewsletterToNewsletterContent")
+  sentAt    DateTime?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  topic     TechFields
+}
+
+model NewsletterContent{
+  id String @id @default(cuid())
+  newsletter Newsletter @relation(name: "NewsletterToNewsletterContent", fields: [newsletterId], references: [id])
+  newsletterId String
+  subject   String
+  content   String
+  locale LOCALE
+}
+
+model Subscriber {
+  id            String      @id @default(cuid())
+  email         String      @unique
+  name          String?
+  locale        LOCALE
+  subscribedAt  DateTime    @default(now())
+  isActive      Boolean     @default(true)
+  topics TechFields[]
+}
+

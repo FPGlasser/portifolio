@@ -4,7 +4,7 @@ import { NextIntlClientProvider, Locale, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/Navbar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,16 +35,12 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider>
-          <header>
-            <Navbar />
-          </header>
-          <main className="pt-16">{children}</main>
-          <footer>Footer</footer>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang={locale}>
+        <body>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

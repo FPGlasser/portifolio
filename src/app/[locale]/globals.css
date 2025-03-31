@@ -73,6 +73,14 @@
   --input: hsl(15 27% 50%);
   --ring: hsl(15 65.6% 18.2%);
   --radius: 1rem;
+  --sidebar: hsl(15 65.6% 18.2%);;
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(15 27% 70%);
+  --sidebar-accent-foreground: hsl(0 0% 0%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(40 84.1% 49.2%);
 }
 .dark {
   --background: hsl(15 27% 10%);
@@ -99,13 +107,51 @@
   --input: hsl(15 27% 50%);
   --ring: hsl(15 65.6% 18.2%);
   --radius: 1rem;
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html{
+    @apply scroll-smooth transition-all
+  }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.glass-primary-card{
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.6px);
+  -webkit-backdrop-filter: blur(2.6px);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glass-primary-card:hover{
+/* From https://css.glass */
+  background: rgba(231, 161, 20, 0.22);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(231, 161, 20, 0.31);
+}
+
+.glass-primary-card-icon{
+  /* From https://css.glass */
+  background: rgba(202, 202, 202, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
 }

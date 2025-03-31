@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Communic-01",
+    "title": "Messages",
+    "url": "#",
+    "icon": "mail"
+  },
+  {
+    "id": "Communic-02",
+    "title": "Newsletter",
+    "url": "#",
+    "icon": "newspaper"
+  },
+  {
+    "id": "Communic-03",
+    "title": "Subscriptions",
+    "url": "#",
+    "icon": "user-check"
+  }
+]
