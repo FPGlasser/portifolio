@@ -11,9 +11,7 @@ const BackOfficeLayout = ({ children }: { children: ReactNode }) => {
         <div className="flex flex-col">
           <TopBar />
           <div className="flex justify-center">
-            <div className="w-full max-w-[1280px] bg-secondary pt-16">
-              {children}
-            </div>
+            <div className="w-full max-w-[1312px] pt-20 px-4">{children}</div>
           </div>
         </div>
       </SidebarInset>

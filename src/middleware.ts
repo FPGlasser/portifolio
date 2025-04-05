@@ -8,12 +8,12 @@ const intlMiddleware = createMiddleware(routing);
 export default async function middleware(req: NextRequest) {
   // Executa o middleware de internacionalização primeiro
   const intlResponse = intlMiddleware(req);
-  if (intlResponse) return intlResponse;
+  return intlResponse;
 
-  // Em seguida, executa o middleware do Clerk
-  return clerkMiddleware({
-    signInUrl: "/signin",
-  });
+  // // Em seguida, executa o middleware do Clerk
+  // return intlResponse(clerkMiddleware({
+  //   signInUrl: "/signin",
+  // }));
 }
 
 export const config = {
