@@ -6,7 +6,12 @@ import { useTranslations } from "next-intl";
 export const ServiceSection = () => {
   const t = useTranslations("pages.homePage.serviceSection");
   return (
-    <Section id="services" intent={"primary"} title={t("Title")}>
+    <Section
+      id="services"
+      navId="SERVICES"
+      intent={"primary"}
+      title={t("Title")}
+    >
       <Container
         intent={"grid"}
         className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -18,44 +23,34 @@ export const ServiceSection = () => {
           icon="code-xml"
         />
         <CardService
-          title="Hello Ipsum"
+          title="Software Development"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        dignissimos ex corrupti, deserunt, nobis culpa ut possimus aliquam
-        doloribus perferendis et qui exercitationem voluptas mollitia vero ab
-        aspernatur repellendus officiis!"
-          icon="activity"
+        dignissimos ex corrupti, "
+          icon="code-xml"
         />
         <CardService
-          title="Hello Ipsum"
+          title="Software Development"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        dignissimos ex corrupti, deserunt, nobis culpa ut possimus aliquam
-        doloribus perferendis et qui exercitationem voluptas mollitia vero ab
-        aspernatur repellendus officiis!"
-          icon="activity"
+        dignissimos ex corrupti, "
+          icon="code-xml"
         />
         <CardService
-          title="Hello Ipsum"
+          title="Software Development"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        dignissimos ex corrupti, deserunt, nobis culpa ut possimus aliquam
-        doloribus perferendis et qui exercitationem voluptas mollitia vero ab
-        aspernatur repellendus officiis!"
-          icon="activity"
+        dignissimos ex corrupti, "
+          icon="code-xml"
         />
         <CardService
-          title="Hello Ipsum"
+          title="Software Development"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        dignissimos ex corrupti, deserunt, nobis culpa ut possimus aliquam
-        doloribus perferendis et qui exercitationem voluptas mollitia vero ab
-        aspernatur repellendus officiis!"
-          icon="activity"
+        dignissimos ex corrupti, "
+          icon="code-xml"
         />
         <CardService
-          title="Hello Ipsum"
+          title="Software Development"
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-        dignissimos ex corrupti, deserunt, nobis culpa ut possimus aliquam
-        doloribus perferendis et qui exercitationem voluptas mollitia vero ab
-        aspernatur repellendus officiis!"
-          icon="activity"
+        dignissimos ex corrupti, "
+          icon="code-xml"
         />
       </Container>
     </Section>

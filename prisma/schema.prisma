@@ -55,7 +55,7 @@ enum TechFields {
   AI_ML // Inteligência Artificial & Machine Learning
   UX_UI // UX/UI Design
   NETWORKING // Redes & Infraestrutura
-  DATABASE_ADMIN // Administração de Banco de Dados
+  DATABASE // Administração de Banco de Dados
   GAME_DEVELOPMENT // Desenvolvimento de Jogos
   EMBEDDED_SYSTEMS // Sistemas Embarcados
   IOT // Internet das Coisas
@@ -194,7 +194,7 @@ enum EmailBlockReason {
 
 model Newsletter {
   id        String           @id @default(cuid())
-  contents NewsletterContent[] @relation("NewsletterToNewsletterContent")
+  contents  NewsletterContent[] @relation("NewsletterToNewsletterContent")
   sentAt    DateTime?
   createdAt DateTime         @default(now())
   updatedAt DateTime         @updatedAt

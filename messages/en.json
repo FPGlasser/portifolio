@@ -45,5 +45,58 @@
         "Description": ""
       }
     }
+  },
+  "data": {
+    "techFields": {
+      "TECHNOLOGY": "Technology",
+      "BUSINESS": "Business",
+      "ENTREPRENEURSHIP": "Entrepreneurship",
+      "INNOVATION": "Innovation",
+      "NEWS": "News",
+      "EDUCATION": "Education",
+      "RESEARCH": "Research",
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing",
+      "DESIGN": "Design",
+      "SOFTWARE_DEVELOPMENT": "Software Development",
+      "DATA_SCIENCE": "Data Science",
+      "CYBERSECURITY": "Cybersecurity",
+      "CLOUD_COMPUTING": "Cloud Computing",
+      "DEVOPS": "DevOps",
+      "AI": "Artificial Intelligence",
+      "ML": "Machine Learning",
+      "UX_UI": "UX/UI",
+      "NETWORKING": "Networking",
+      "DATABASE": "Database",
+      "GAME_DEVELOPMENT": "Game Development",
+      "EMBEDDED_SYSTEMS": "Embedded Systems",
+      "IOT": "Internet of Things",
+      "BLOCKCHAIN": "Blockchain",
+      "IT_MANAGEMENT": "IT Management",
+      "TECH_SUPPORT": "Technical Support",
+      "ANALOG_ELECTRONICS": "Analog Electronics",
+      "DIGITAL_ELECTRONICS": "Digital Electronics",
+      "POWER_ELECTRONICS": "Power Electronics",
+      "AUTOMATION_CONTROL": "Automation & Control",
+      "TELECOMMUNICATIONS": "Telecommunications",
+      "ROBOTICS": "Robotics",
+      "PCB_DESIGN": "PCB Design",
+      "SENSOR_TECHNOLOGY": "Sensor Technology"
+    },
+    "projectType": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "FULLSTACK": "FullStack",
+      "DATABASE": "Database",
+      "ARCHITECTURE": "Software Architecture",
+      "DDD": "Domain Driven Design",
+      "MICROSERVICES": "Microservices",
+      "EMBEDDED_SYSTEMS": "Embedded Systems",
+      "NETWORKING": "Networking",
+      "AI": "Artificial Intelligence",
+      "ML": "Machine Learning",
+      "CLOUD_COMPUTING": "Cloud Computing",
+      "ELECTRONICS": "Electronics"
+    }
   }
 }

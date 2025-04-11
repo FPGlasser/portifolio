@@ -1,26 +1,26 @@
 [
   {
-    "id": 1,
+    "id": "HOME",
     "title": "Home",
     "link": "/#hero"
   },
   {
-    "id": 2,
+    "id": "ABOUT",
     "title": "About",
     "link": "/#about"
   },
   {
-    "id": 3,
+    "id": "SERVICES",
     "title": "Services",
     "link": "/#services"
   },
   {
-    "id": 4,
+    "id": "PROJECT",
     "title": "Projects",
     "link": "/projects"
   },
   {
-    "id": 5,
+    "id": "BLOG",
     "title": "Blog",
     "link": "/blog"
   }

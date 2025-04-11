@@ -7,7 +7,7 @@ import { DownloadResumeBtn } from "../buttons/DownloadResumeBtn";
 export const HeroSection = () => {
   const t = useTranslations("pages.homePage.heroSection");
   return (
-    <Section id="hero">
+    <Section id="hero" navId="HOME">
       <div className="w-full flex flex-col  justify-center items-center gap-8">
         <Container className="justify-center">
           <Typography variant={"headlineSmall"}>{t("Presentation")}</Typography>

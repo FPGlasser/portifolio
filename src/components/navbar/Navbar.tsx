@@ -6,8 +6,8 @@ import { ChangeLocale } from "./locale/ChangeLocale";
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-center items-center w-full h-16 bg-background fixed p-4 md:p-8 lg:16 z-50">
-      <div className="max-w-[1280px] w-full flex justify-between items-center">
+    <div className="flex justify-center items-center w-full h-16 bg-background fixed px-4 md:px-8 lg:px-16 z-50">
+      <div className="max-w-[1280px] w-full flex justify-between items-center h-16">
         <div className="font-bold">LOGO</div>
         <div>
           <NavMenuWideScreen />
