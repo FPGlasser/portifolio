@@ -1,14 +1,11 @@
-"use client";
-import ScrollToHash from "@/components/effects/ScrollToSection";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ServiceSection } from "@/components/sections/ServiceSection";
+import { AboutSection } from "@/core/presentation/components/features/portifolio/sections/AboutSection";
+import { ContactSection } from "@/core/presentation/components/features/portifolio/sections/ContactSection";
+import { HeroSection } from "@/core/presentation/components/features/portifolio/sections/HeroSection";
+import { ServiceSection } from "@/core/presentation/components/features/portifolio/sections/ServiceSection";
 
 export default function Home() {
   return (
     <div>
-      <ScrollToHash />
       <HeroSection />
       <AboutSection />
       <ServiceSection />

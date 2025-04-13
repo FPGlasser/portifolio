@@ -1,7 +1,10 @@
 import React, { ReactNode } from "react";
-import { BackOfficeSidebar } from "./_src/components/sidebar/BackofficeSidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { TopBar } from "./_src/components/topbar/Topbar";
+import { BackOfficeSidebar } from "@/core/presentation/components/features/backoffice/sidebar/BackofficeSidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+} from "@/core/presentation/components/ui/sidebar";
+import { TopBar } from "@/core/presentation/components/features/backoffice/topbar/Topbar";
 
 const BackOfficeLayout = ({ children }: { children: ReactNode }) => {
   return (

@@ -1,7 +1,12 @@
 import React from "react";
-import { Typography } from "@/components/layout";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Typography } from "@/core/presentation/components/portifolio/layout";
+import { Button } from "@/core/presentation/components/ui/button";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/core/presentation/components/ui/tabs";
 
 const AllPostsPage = () => {
   return (

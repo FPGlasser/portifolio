@@ -1,8 +1,11 @@
 import React from "react";
-import { Section, Typography } from "@/components/layout";
+import {
+  Section,
+  Typography,
+} from "@/core/presentation/components/features/portifolio/layout";
 
-import BlogContainer from "@/components/blog-container/BlogContainer";
-import { SidePanel } from "@/components/cards/SidePanel";
+import BlogContainer from "@/core/presentation/components/features/portifolio/blog-container/BlogContainer";
+import { SidePanel } from "@/core/presentation/components/features/portifolio/cards/SidePanel";
 
 const BlogPage = () => {
   return (
